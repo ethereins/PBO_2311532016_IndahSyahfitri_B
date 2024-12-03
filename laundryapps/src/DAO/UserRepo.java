@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import config.Database;
+import confg.Database;
 import model.User;
 
 public class UserRepo implements UserDao {
@@ -42,7 +42,7 @@ public class UserRepo implements UserDao {
         try (Statement st = connection.createStatement();
              ResultSet rs = st.executeQuery(select)) {
             while (rs.next()) {
-                User user = new User();
+                User user = new User("","");
                 user.setId(rs.getString("id"));
                 user.setNama(rs.getString("name"));
                 user.setUsername(rs.getString("username"));

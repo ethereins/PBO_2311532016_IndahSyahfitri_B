@@ -2,7 +2,15 @@ package model;
 
 public class User {
     private String id, nama, username, password;
-
+    
+    public User(String uname, String pass) {
+    	this.username = uname;
+    	this.password = pass;
+    }
+    
+    public User() {
+    	
+    }
     public String getId() {
         return id;
     }
@@ -35,17 +43,4 @@ public class User {
         this.password = password;
     }
 
-    public static boolean login(String username, String password) {
-        boolean isLogin = false;
-        User user = new User();
-        user.setId("1");
-        user.setNama("fulan");
-        user.setUsername("fulan");
-        user.setPassword("12345");
-
-        if (user.getUsername().equals(username) && user.getPassword().equals(password)) {
-            isLogin = true;
-        }
-        return isLogin;
-    }
 }
